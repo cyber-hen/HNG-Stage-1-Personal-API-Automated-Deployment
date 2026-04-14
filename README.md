@@ -1,6 +1,14 @@
 🚀 Personal API – Automated Deployment (HNG Stage 1)
-A high‑performance Personal API built with FastAPI and deployed on an AWS EC2 instance.
-This project demonstrates backend engineering combined with practical DevOps workflows, including Nginx reverse proxying, Systemd process management, and SSL/TLS automation with Certbot.
+A lightweight, high‑performance Personal API built with FastAPI and deployed on an AWS EC2 instance.
+This project demonstrates practical backend engineering and DevOps workflows, including:
+
+Nginx reverse proxying
+
+Systemd service management
+
+Automated SSL/TLS with Certbot
+
+Production‑grade deployment structure
 
 🧰 Tech Stack
 Layer	Technology
@@ -10,8 +18,8 @@ Server	Uvicorn
 Reverse Proxy	Nginx
 Infrastructure	AWS EC2 (Ubuntu 24.04 LTS)
 SSL/TLS	Certbot (Let’s Encrypt)
-⚙️ Local Development Setup
-Follow the steps below to run the API locally:
+⚡ Local Development Setup
+Follow the steps below to run the API locally.
 
 1. Clone the Repository
 bash
@@ -30,29 +38,24 @@ pip install -r requirements.txt
 bash
 uvicorn main:app --reload
 Your API will be available at:
-http://127.0.0.1:8000 (127.0.0.1 in Bing)
 
+Code
+http://127.0.0.1:8000
 📡 API Endpoints
 All endpoints return application/json with HTTP 200 OK.
 
-1. Root
-GET /  
-Checks basic API availability.
-Response:
+GET /
+Returns API availability status.
 
 json
 { "message": "API is running" }
-2. Health Check
-GET /health  
-Used for uptime monitoring.
-Response:
+GET /health
+Used for uptime and monitoring.
 
 json
 { "message": "healthy" }
-3. Personal Info
-GET /me  
+GET /me
 Returns developer identification details.
-Response:
 
 json
 {
@@ -60,11 +63,11 @@ json
   "email": "your-email@example.com",
   "github": "https://github.com/yourusername"
 }
-🛠️ Production Deployment Architecture
-This project is deployed on an AWS EC2 instance with a focus on security, reliability, and automation.
+🏗️ Production Deployment Architecture
+This API is deployed on an AWS EC2 instance with a focus on security, reliability, and automation.
 
-1. Process Management – Systemd
-A Systemd service (/etc/systemd/system/hngapi.service) ensures:
+Systemd Process Management
+A custom service file (/etc/systemd/system/hngapi.service) ensures:
 
 Automatic startup on boot
 
@@ -72,30 +75,32 @@ Automatic restart on failure
 
 Decoupling from SSH sessions
 
-2. Reverse Proxy – Nginx
+Nginx Reverse Proxy
 Nginx handles:
 
-Routing external traffic to Uvicorn (port 8000)
+Routing external traffic to Uvicorn
 
-Hiding internal ports from the public internet
+Protecting internal ports
 
-Logging and request handling at the edge
+Adding custom headers for monitoring
 
-3. SSL/TLS – Certbot
-The domain is secured using Let’s Encrypt, with:
+Acting as the public-facing entry point
+
+SSL/TLS with Certbot
+The domain is secured using Let’s Encrypt:
 
 Automated certificate issuance
 
 Auto‑renewal
 
-Forced HTTPS via 301 redirect
+Enforced HTTPS via 301 redirect
 
 🔗 Live API URL
+Code
 https://your-domain-name.com
-
 📘 Key Lessons Learned
-Persistence Matters: Systemd ensures your application survives reboots and crashes.
+Systemd provides resilience — your app survives crashes and reboots.
 
-Reverse Proxying is Essential: Nginx provides security, structure, and flexibility for production traffic.
+Nginx is essential for secure, structured production traffic.
 
-SSL Should Be Automated: Certbot simplifies certificate management and enforces modern security standards.
+SSL automation matters — Certbot simplifies certificate management and enforces modern security standards.
