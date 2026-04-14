@@ -1,5 +1,3 @@
-Absolutely — your README already has solid content, it just needs clearer structure, stronger formatting, and a more polished, professional tone. Below is a fully rewritten, production‑ready version you can paste directly into your repo.
-
 ---
 
 # 🚀 Personal API – Automated Deployment (HNG Stage 1)
@@ -51,7 +49,7 @@ uvicorn main:app --reload
 ```
 
 Your API will be available at:  
-**`http://127.0.0.1:8000` [(127.0.0.1 in Bing)](https://www.bing.com/search?q="http%3A%2F%2F127.0.0.1%3A8000%2F")**
+**`http://127.0.0.1:8000`**
 
 ---
 
@@ -115,7 +113,7 @@ The domain is secured using **Let’s Encrypt**, with:
 
 ## 🔗 Live API URL
 
-**[https://your-domain-name.com](https://your-domain-name.com)**
+**[https://hngdevops-henry-awoseyi.duckdns.org/](https://hngdevops-henry-awoseyi.duckdns.org/)**
 
 ---
 
@@ -126,12 +124,3 @@ The domain is secured using **Let’s Encrypt**, with:
 - **SSL Should Be Automated:** Certbot simplifies certificate management and enforces modern security standards.
 
 ---
-
-If you'd like, I can also help you:
-
-- Add badges (build status, Python version, license)  
-- Add an architecture diagram  
-- Add a deployment flowchart  
-- Improve the `/me` endpoint with dynamic environment variables  
-
-Just tell me what direction you want to take it.
