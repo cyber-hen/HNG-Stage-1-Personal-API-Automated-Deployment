@@ -125,7 +125,6 @@ The domain is secured using **Let’s Encrypt**, with:
 
 ---
 
-If you want me to restore *any other* earlier version or generate a variant, just tell me.
 ## 📁 Project Structure
 
 ```
